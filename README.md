@@ -17,6 +17,7 @@ The system classifies an uploaded image into one of six categories:
 ## 🏗️ Model Development
 
 ### 🔍 Challenges
+- Streamlit.io uses cpu for the free version
 - Limited training data (2,300 images)
 - Some categories are visually difficult to distinguish, even for humans
 
@@ -25,6 +26,7 @@ The system classifies an uploaded image into one of six categories:
 - Applied **data augmentation** to increase dataset variability
 - Resized all images to **224x224 pixels**
 - Normalized images using **ImageNet mean and standard deviation**
+- Loaded the model in CPU on Streamlit for the live app, it predicts a bit slower but still works fine
 
 ### 🔄 Transfer Learning
 Due to data limitations, transfer learning was used. After testing multiple pretrained models, **ResNet** emerged as the best performer.
@@ -83,7 +85,7 @@ Here's how the app looks in action:
 
 3. Launch the Streamlit app:
    ```bash
-   streamlit run app/streamlit_app.py
+   streamlit run app/app.py
    ```
 
 ## 📌 Future Improvements
